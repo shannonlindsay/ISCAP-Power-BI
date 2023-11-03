@@ -1,27 +1,15 @@
-# INF99X: Sample Course
+**ISCAP 2023**
 
-**Are you an MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
+# Empowering Educators: Accelerated Data Visualization and Analytics with Power BI
 
-## What are we doing?
+This is a public repository, containing materials used for the 2023 ISCAP session: Empowering Educators: Accelerated Data Visualization and Analytics with Power BI. Please feel free to submit issues, but note that this repository will not be monitored after 10 November 2023.
 
-- To support this course, we will need to make frequent updates to the course content to keep it current with the Microsoft services used in the course. We are publishing the lab instructions and lab files on GitHub to allow for open contributions between the course authors and MCTs (Microsoft Certified Trainer) to keep the content current with product changes.
+## Session overview: 
 
-- We hope this brings a sense of collaboration to the labs like we have never had before - when a Microsoft service such as Azure or Microsoft 365 changes and you find it first during a live delivery, go ahead and make an enhancement right in the lab source. Help your fellow MCTs.
+In today's data-driven world, the ability to create compelling data visualizations and perform meaningful analytics is an indispensable skill for both students and teachers in higher education. This interactive workshop is designed to equip this diverse audience with the tools and knowledge needed to excel in data visualization and analytics.
 
-## How should I use this repository??
+In this hands-on session, you'll visualize data and uncover insights using Microsoft Power BI, a cutting-edge data visualization and analytics tool. Regardless of prior experience with Power BI or data-related tasks, you'll get to practice your analytics skills in a supportive learning environment. By the end of this workshop, you'll be able to create charts, reports, and dashboards that let you interact with and gain insights from your data.
 
-- The instructor materials are your primary source for teaching the course content.
+## Prerequisites: 
 
-- These files on GitHub are designed to be used in the course labs, which use the hosted lab environment.
-
-- It is recommended that for every delivery, trainers check GitHub for any changes that may have been made to support the latest Microsoft cloud services and get the latest files for their delivery.
-
-## What about changes to the student handbook?
-
-- We will review the student handbook on a quarterly basis and update through the normal MOC (Microsoft Official Curriculum) release channels as needed.
-
-## How do I contribute?
-
-- Any MCT (Microsoft Certified Trainer) can submit a pull request to the code or content in the GitHub repro. Microsoft and the course author will then triage and include content and lab code changes as needed.
-
-- You can submit bugs, changes, improvement, and ideas. Find a new Azure or Microsoft 365 feature before we have? Submit a new demo!
+This workshop is recommended for everyone. There is no Power BI experience required. You must bring a computer that has Microsoft Power BI installed with the September 2023 version or later. Download Power BI from [Microsoft](https://powerbi.microsoft.com/en-us/downloads/).
