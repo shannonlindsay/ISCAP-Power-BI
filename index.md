@@ -4,7 +4,7 @@ permalink: index.html
 layout: home
 ---
 
-Hyperlinks to each of the lab exercises and demos are listed below.
+Hyperlinks to everything you need to know about today's session are listed below. If you have any questions, you can submit a [GitHub issue](https://github.com/shannonlindsay/ISCAP-Power-BI/issues/new) or reach out to me via email.
 
 ## Labs
 
