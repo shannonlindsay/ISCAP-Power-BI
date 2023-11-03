@@ -93,6 +93,9 @@ I always like to start with a table visual to understand what my data looks like
 
 ## Moving fast?! Play around with different types of visuals!
 
+<img width="1581" alt="image" src="https://github.com/shannonlindsay/ISCAP-Power-BI/assets/77289548/6eabd5a7-1b7f-44ef-869c-149c26f0a109">
+
+
 ## Check your work
 
 You can [download a copy](https://4lbi-my.sharepoint.com/:u:/p/shannon/EQR0NN474plHtOlVfnowNqYBflQrm6OHabqzHtvLAfs81Q?e=ZRb7p2) of the completed report to see what I've done.
