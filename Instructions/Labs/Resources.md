@@ -6,7 +6,7 @@ lab:
 
 # Microsoft Learn Modules
 
-Take a look at the curated collection of [Microsoft Learn content](aka.ms/pbilearn). 
+Take a look at the curated collection of [Microsoft Learn content](https://aka.ms/pbilearn). 
 
 If you'd like to learn Power BI as a complete platform, I recommend you check out the [Learning Paths associated with the Power BI Data Analyst Associate certification](https://learn.microsoft.com/credentials/certifications/power-bi-data-analyst-associate/?azure-portal=true) (scroll down to follow the self-paced learning). Many of the modules include hands-on labs where you'll be able to practice what you've learned.
 
