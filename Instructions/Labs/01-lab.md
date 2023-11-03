@@ -1,7 +1,7 @@
 ---
 lab:
-    title: 'Get Data in Power BI Desktop'
-    module: 'Get Data in Power BI'
+    title: 'Lab Instructions'
+    module: 'Hands on Lab'
 ---
 
 # Get Data in Power BI Desktop
