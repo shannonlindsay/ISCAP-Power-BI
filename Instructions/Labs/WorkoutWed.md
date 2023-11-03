@@ -10,4 +10,4 @@ lab:
 
 Each Wednesday a challenges are released and participants are asked to replicate the challenge that is posed as closely as possible. We'll provide you with either a solution file or a guided video.
 
-Use Workout Wednesday to practice data visualization, build your portfolio, or assign to your students!
+Use Workout Wednesday to **practice data visualization**, **build your portfolio**, or **assign to your students**!
