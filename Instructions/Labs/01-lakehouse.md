@@ -1,7 +1,7 @@
 ---
 lab:
-    title: 'Create a lakehouse'
-    module: 'Get started with Lakehouses'
+    title: 'Lab Instructions'
+    module: 'Hands on Lab'
 ---
 
 # Create a lakehouse
