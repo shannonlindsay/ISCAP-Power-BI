@@ -4,45 +4,22 @@ lab:
     module: 'Hands on Lab'
 ---
 
-# Get Data in Power BI Desktop
-
+# Build your first Power BI report
 ## **Lab story**
 
-This lab is designed to introduce you to Power BI Desktop application and how to connect to data and how to use data preview techniques to understand the characteristics and quality of the source data. The learning objectives are:
+This lab is designed to introduce you to the Power BI Desktop application, and enable you to practice basic data transformation and build data visualizations. This lab only introduces the concept of building reports using Power BI desktop. It does NOT go into publishing and sharing reports, scheduling automated refreshes, or anything using the Power BI service.
 
-- Open Power BI Desktop
-- Connect to different data sources
-- Preview source data with Power Query
-- Use data profiling features in Power Query
-
-**This lab should take approximately 30 minutes.**
+**This lab should take approximately 45 minutes.**
 
 ## **Get started with Power BI Desktop**
 
-In this task, you start by opening a starter Power BI (.pbix) file. The starter file doesn't contain any data, but has been specially configured to help you complete the lab. The following report-level settings have been disabled in the starter file:
+1. Open a Power BI Desktop file.
 
-- Data Load > Import relationships from data sources on first load
-- Data Load > Autodetect new relationships after data is loaded
+1. Save a copy of the file using **Save As** - name the file and save to a place you'll remember.
 
-*Note: While having these two options enabled can be helpful when developing a data model, you disabled them earlier to support the lab experience. When you create relationships in the **Load Data in Power BI Desktop** lab, you’ll learn why you're adding each one.*
+## **Get data from local files**
 
-1. Open Power BI Desktop.
-
-    ![Power BI Desktop icon](Linked_image_Files/02-load-data-with-power-query-in-power-bi-desktop_image1.png)
-
-    *Tip: By default, the Getting Started dialog box opens in front of Power BI Desktop. You can choose to sign-in, and then close the pop-up.*
-
-1. To open the starter Power BI Desktop file, select the **File > Open Report > Browse Reports**.
-
-1. In the **Open** window, navigate to the **D:\PL300\Labs\01-prepare-data-with-power-query-in-power-bi-desktop\Starter** folder.
-
-1. Select the **Sales Analysis** file.
-
-1. Save a copy of the file with **Save As** in to the **D:\PL300\MySolution** folder.
-
-## **Get data from SQL Server**
-
-This task teaches you how to connect to a SQL Server database and import tables, which create queries in Power Query.
+This task teaches you how to connect to a file folder and import multiple files, which create queries in Power Query.
 
 1. On the **Home** ribbon tab, from inside the **Data** group, select **SQL Server**.
 
