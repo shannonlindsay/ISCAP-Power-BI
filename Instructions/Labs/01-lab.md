@@ -5,172 +5,96 @@ lab:
 ---
 
 # Build your first Power BI report
-## **Lab story**
 
 This lab is designed to introduce you to the Power BI Desktop application, and enable you to practice basic data transformation and build data visualizations. This lab only introduces the concept of building reports using Power BI desktop. It does NOT go into publishing and sharing reports, scheduling automated refreshes, or anything using the Power BI service.
 
+## Dataset
+
+This exercise uses maximum ice coverage data from NOAA’s Great Lakes Environmental Research Laboratory. A lake can have ice coverage ranging from 0 (no ice) to 100 (frozen over).
+
+**[Download the data](https://4lbi-my.sharepoint.com/:x:/p/shannon/EYE_uUd1hENBqjx5v_yGAuABcSmFG6IUj14_j0EfJUnKTQ?e=O4jpeI)** prior to starting the exercise. **Save the dataset** in a location you'll remember.
+
 **This lab should take approximately 45 minutes.**
 
-## **Get started with Power BI Desktop**
+Working together we will get started, get and transform data, and build your first visual. You'll then have time to play around with the data, add additional visuals to your page and add your own design flair!
+
+## **Get and Transform Data**
 
 1. Open a Power BI Desktop file.
 
 1. Save a copy of the file using **Save As** - name the file and save to a place you'll remember.
 
-## **Get data from local files**
+1. On the **Home** ribbon tab, from inside the **Data** group, select **Excel**. Step through the wizard, select **Sheet 1**, and select **Transform Data**.
 
-This task teaches you how to connect to a file folder and import multiple files, which create queries in Power Query.
+   *This will open the Power Query editor window. This is where we'll transform our data for analysis.*
 
-1. On the **Home** ribbon tab, from inside the **Data** group, select **SQL Server**.
+1. From here, we need to shape our data so that we can easily look at our data by year and by lake. We want to end up with a single column for lakes. You will use the **Unpivot Other Columns** option on the transform tab of the ribbon to achieve this.
+   
+3. Using the options in the tranform tab of the ribbon, fix the formatting of the lake names so they are all capitalized.
 
-     ![SQL Server Get Data icon](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image11.png)
+   *Take a look at all of the options on the transform tab of the ribbon. Let me know if any of these raise questions!*
 
-1. In the **SQL Server Database** window, in the **Server** box, enter **localhost**, then select **OK**.
+1. Rename the Attribute and Values column to something that makes sense to you.
 
-    *Note: In this lab, you’ll connect to the SQL Server database by using **localhost** because gateway data sources can't resolve **localhost**. This isn’t a recommended practice when creating your own solutions.*
+   *That's it - our data is transformed and in shape to start building visualizations!*
 
-1. If prompted for credentials, in the **SQL Server Database** window, select **Use my current credentials**, and then **Connect**.
+1. On the Home tab of the Ribbon, select **Close and Apply**. This applies the changes you made to the data to the **[Data Model](https://www.phdata.io/blog/data-modeling-fundamentals-in-power-bi/)**. 
 
-1. In the **Navigator** window, at the left, expand the **AdventureWorksDW2020** database.
+## Build a Matrix Visual
 
-    *Note: The **AdventureWorksDW2020** database is based on the **AdventureWorksDW2017** sample database. It has been modified to support the learning objectives of the course labs.*
+The blank canvas in Power BI can be intimidating! There are a million buttons and panes - lets take a moment to explore together before jumping in.
 
-1. Select—but don’t check—the **DimEmployee** table
+I always like to start with a table visual to understand what my data looks like. After we get our table on the canvas, we'll add a slicer visual together and explore conditional formatting.
 
-     ![AdventureWorksDW2020 database with DimEmployee indicated](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image18.png)
+1. From the insert tab of the ribbon, select the **Matrix** visual. This will drop a blank table on the canvas.
+   
+1. Use the **Add data** button in the **Build a visual** pane to add columns from your data to the table.
 
-1. In the right pane, notice a preview of the table data. The preview data allows you to see the columns and a sample of rows.
+2. When you add the **Year** column to the table, it will automatically sum. To avoid columns summing that should not, select the column in the **Data** pane, and change the summarization on the **Column tools** tab of the ribbon to **Don't summarize**.
 
-1. To create queries, select the checkbox next to the following six tables:
+3. Play around with adding fields to the rows, columns, and values field wells in the **Build a visual** pane. Understanding where your data will go when you populate these fields is key to your success!
+4. Turn the totals off for the visual using the **Format** pane (looks like a tiny paintbrush on the right-hand side of the screen).
+5. Apply any other customizations you'd like to the formatting of your matrix visual. Ask questions as needed.
 
-    - DimEmployee
-    - DimEmployeeSalesTerritory
-    - DimProduct
-    - DimReseller
-    - DimSalesTerritory
-    - FactResellerSales
+## Add a slicer visual to enable users to select a range of years
 
-1. Complete this task by clicking **Transform Data**, which will open Power Query Editor.
-    1. *This lab is only intended to connect to and profile the data, but not **transform data**.*
+1. Add a slicer visual using the **Insert** tab of the ribbon.
 
-## **Preview Data in Power Query Editor**
+2. Customize the appearance of your slicer using the **format pane** and change the name to make it user friendly.
+   
+4. Play around with the slider to see how it works!
 
-This task introduces the Power Query Editor and allows you to review and profile the data. This helps you determine how to clean and transform the data later.
+## Add a line chart displaying the average ice coverage over time
 
-1. In the **Power Query Editor** window, at the left, notice the **Queries** pane. The **Queries** pane contains one query for each table you checked.
+1. Add a line chart using the insert tab of the ribbon
+2. Power BI will automatically **Sum** the ice coverage value field. Select the column name in the **Build a visual** pane and change the aggregation from sum to **average**.
+    
+    *Power BI is smart and can automatically create calculations for you. These calculations are called **measures**. When a measure is automatically created in a visual, this is called an **implicit measure**.*
 
-     ![List of loaded queries](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image20.png)
+1. Let's practice writing our first explicit measure using the DAX language. We'll create a measure for, you guessed it, the average ice coverage. This is a different way of accomplishing the same thing, but, can also be used elsewhere in other visuals.
+   *Read more about implicit vs explicit measures on [Reza's blog](https://radacad.com/explicit-vs-implicit-dax-measures-in-power-bi)*
 
-1. Select the first query—**DimEmployee**.
+1. Add your new **average ice coverage** measure to your line chart visual.
 
-    *The **DimEmployee** table in the SQL Server database stores one row for each employee. A subset of the rows from this table represents the salespeople, which will be relevant to the model you’ll develop.*
+2. Format your line chart. Add and remove labels, gridlines, axis labels - whatever you prefer the formatting to look like.
+   *Pro tip: use the search bar at the top of the formatting pane!*
 
-1. At the bottom left corner of the status bar, some table statistics are provided—the table has 33 columns, and 296 rows.
+1. Add a **trend line** to see what's going on with average ice coverage over time. Find this on the **Format** pane.
 
-     ![Count of 33 columns, 296 rows](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image22.png)
+## Add a column chart displaying the maximum ice coverage by lake
 
-1. In the data preview pane, scroll horizontally to review all columns. Notice that the last five columns contain **Table** or **Value** links.
+1. Using similar methods as above, add a column chart to your canvas and include the fields **Lake** and **Ice coverage**. This time we want to look at **Maximum ice coverage** - use the UI to create your measure or write a new explicit measure using DAX.
+2. Format your bar chart using the **Format** pane.
 
-    *These five columns represent relationships to other tables in the database. They can be used to join tables together. You’ll join tables in the **Load Data in Power BI Desktop** lab.*
+## Format your report
 
-1. To assess column quality, on the **View** ribbon tab, from inside the **Data Preview** group, check **Column Quality**. The column quality feature allows you to easily determine the percentage of valid, error, or empty values found in columns.
+1. Add a title and data source to your report.
+2. Move the visuals around so that they make sense to both your eye and how you want to display the data. 
 
-     ![Column Quality selection in ribbon](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image23.png)
+## Moving fast?! Play around with different types of visuals!
 
-1. Notice that the **Position** column has 94% empty (null) rows.
+## Check your work
 
-     ![Column quality showing 94% empty rows](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image24.png)
+You can [download a copy](https://4lbi-my.sharepoint.com/:u:/p/shannon/EQR0NN474plHtOlVfnowNqYBflQrm6OHabqzHtvLAfs81Q?e=ZRb7p2) of the completed report to see what I've done.
 
-1. To assess column distribution, on the **View** ribbon tab, from inside the **Data Preview** group, check **Column Distribution**.
-
-1. Review the **Position** column again, and notice that there are four distinct values, and one unique value.
-
-1. Review the column distribution for the **EmployeeKey** column—there are 296 distinct values, and 296 unique values.
-
-    *When the distinct and unique counts are the same, it means the column contains unique values. When modeling, it’s important that some model tables have unique columns. These unique columns can be used to create one-to-many relationships, which you'll do in the **Model Data in Power BI Desktop** lab.*
-
-     ![Column distribution showing 296 distinct, 296 unique values](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image26.png)
-
-1. In the **Queries** pane, select the **DimEmployeeSalesTerritory** query.
-
-    *The **DimEmployeeSalesTerritory** table stores one row for each employee and the sales territory regions they manage. The table supports relating many regions to a single employee. Some employees manage one, two, or possibly more regions. When you model this data, you’ll need to define a many-to-many relationship.*
-
-1. In the **Queries** pane, select the **DimProduct** query. The **DimProduct** table contains one row per product sold by the company.
-
-1. Horizontally scroll to reveal the last columns. Notice the **DimProductSubcategory** column.
-
-    *When you add transformations to this query in the **Load Data in Power BI Desktop** lab, you’ll use the **DimProductSubcategory** column to join tables.*
-
-1. In the **Queries** pane, select the **DimReseller** query.
-
-    *The **DimReseller** table contains one row per reseller. Resellers sell, distribute, or value add to the Adventure Works products.*
-
-1. To view column values, on the **View** ribbon tab, from inside the **Data Preview** group, check **Column Profile**.
-
-1. Select the **BusinessType** column header, and notice the new pane beneath the data preview pane.
-
-1. Review the column statistics and value distribution in the data preview pane.
-
-    *Notice the data quality issue: there are two labels for warehouse (**Warehouse**, and the misspelled **Ware House**).*
-
-     ![Value distribution for the BusinessType column](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image31.png)
-
-1. Hover the cursor over the **Ware House** bar, and notice that there are five rows with this value.
-
-    *You’ll apply a transformation to relabel these five rows in the **Load Data in Power BI Desktop** lab.*
-
-1. In the **Queries** pane, select the **DimSalesTerritory** query.  
-
-    *The **DimSalesTerritory** table contains one row per sales region, including **Corporate HQ** (headquarters). Regions are assigned to a country, and countries are assigned to groups. In the **Model Data in Power BI Desktop** lab, you’ll create a hierarchy to support analysis at region, country, or group level.*
-
-1. In the **Queries** pane, select the **FactResellerSales** query.
-
-    *The **FactResellerSales** table contains one row per sales order line—a sales order contains one or more line items.*
-
-1. Review the column quality for the **TotalProductCost** column, and notice that 8% of the rows are empty.
-
-    *Missing **TotalProductCost** column values is a data quality issue. To address the issue, in the **Load Data in Power BI Desktop** lab, you’ll apply transformations to fill in missing values by using the product standard cost, which is stored in the related **DimProduct** table.*
-
-## **Get data from a CSV file**
-
-In this task, you'll create a new query based on CSV files.
-
-1. To add a new query, in the **Power Query Editor** window, on the **Home** ribbon tab, from inside the **New Query** group, select the **New Source** down-arrow, and then select **Text/CSV**.
-
-1. In the **Open** window, navigate to the **D:\PL300\Resources** folder, and select the **ResellerSalesTargets.csv** file. Select **Open**.
-
-1. In the **ResellerSalesTargets.csv** window, review the preview data. Select **OK**.
-
-1. In the **Queries** pane, notice the addition of the **ResellerSalesTargets** query.
-
-    *The **ResellerSalesTargets** CSV file contains one row per salesperson, per year. Each row records 12 monthly sales targets (expressed in thousands). The business year for the Adventure Works company commences on July 1.*
-
-1. Notice that no column contains empty values.  When there isn’t a monthly sales target, a hyphen character is stored instead.
-
-1. Review the icons in each column header, to the left of the column name. The icons represent the column data type. **123** is whole number, and **ABC** is text.
-
-     ![Picture 74](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image38.png)
-
-1. Repeat the steps to create a query based on the **D:\PL300\Resources\ColorFormats.csv** file.
-
-    *The **ColorFormats** CSV file contains one row per product color. Each row records the HEX codes to format background and font colors.*
-
-*You should now have two new queries, **ResellerSalesTargets** and **ColorFormats**.*
-
- ![Queries list](Linked_image_Files/01-all-queries-loaded.png)
-
-### **Finish up**
-
-In this task, you'll complete the lab.
-
-1. On the **View** ribbon tab, from inside the **Data Preview** group, uncheck the three data preview options that were previously enabled in this lab:
-
-    - Column quality
-    - Column distribution
-    - Column profile
-
-     ![Picture 76](Linked_image_Files/01-prepare-data-with-power-query-in-power-bi-desktop_image40.png)
-
-1. **Save** the Power BI Desktop file. When prompted to apply the pending changes, select **Apply Later**.
-
-    *Tip: Applying the queries will load their data to the data model. You’re not ready to do that, as there are many transformations that must be applied first.*
+ 
