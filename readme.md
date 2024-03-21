@@ -2,7 +2,7 @@
 
 # Empowering Educators: Accelerated Data Visualization and Analytics with Power BI
 
-This is a public repository, containing materials used for the 2023 ISCAP session: Empowering Educators: Accelerated Data Visualization and Analytics with Power BI. Please feel free to submit issues, but note that this repository will not be monitored after 10 November 2023.
+This is a public repository, containing materials used for the 2023 Fabric Community Conference.
 
 ## Session overview
 
